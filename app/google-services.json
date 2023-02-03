@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "510130519866",
+    "project_id": "htf-farmers",
+    "storage_bucket": "htf-farmers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510130519866:android:249d4b3fc741427bfc1a03",
+        "android_client_info": {
+          "package_name": "com.example.agro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510130519866-l7c4olvsp8kvjhiks4mesf8ejcgbqgca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwCCb5DmoVcVdZN9eItwL5gVPGL-xtGeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510130519866-55j6e9jmucj30jd5jtuc7407qm6gih8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510130519866:android:7951fc632755d543fc1a03",
+        "android_client_info": {
+          "package_name": "com.example.hackthefall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510130519866-l7c4olvsp8kvjhiks4mesf8ejcgbqgca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwCCb5DmoVcVdZN9eItwL5gVPGL-xtGeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510130519866-55j6e9jmucj30jd5jtuc7407qm6gih8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

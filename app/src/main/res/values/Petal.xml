@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TopLeftPetal">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeTopRight">65dp</item>
+        <item name="cornerSizeBottomLeft">65dp</item>
+    </style>
+    <style name="TopRightPetal">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">65dp</item>
+        <item name="cornerSizeBottomRight">65dp</item>
+    </style>
+    <style name="ButtomLeftPetal">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">65dp</item>
+        <item name="cornerSizeBottomRight">65dp</item>
+    </style>
+    <style name="ButtomRightPetal">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeTopRight">65dp</item>
+        <item name="cornerSizeBottomLeft">65dp</item>
+    </style>
+    <style name="BottomPetal">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerFamilyTopRight">rounded</item>
+    <item name="cornerFamilyBottomLeft">rounded</item>
+    <item name="cornerFamilyBottomRight">rounded</item>
+    <item name="cornerFamilyTopLeft">rounded</item>
+    <item name="cornerSizeTopRight">55dp</item>
+    <item name="cornerSizeBottomLeft">98dp</item>
+    <item name="cornerSizeBottomRight">98dp</item>
+    <item name="cornerSizeTopLeft">55dp</item>
+    </style>
+</resources>

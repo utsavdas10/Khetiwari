@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Agro</string>
+    <string name="your_web_client_id">510130519866-55j6e9jmucj30jd5jtuc7407qm6gih8v.apps.googleusercontent.com</string>
+    <string name="title_activity_home">Home</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string-array name="Units">
+        <item>Kg</item>
+        <item>g</item>
+        <item>Pound</item>
+        <item>Units</item>
+        <item>Dozen</item>
+        <item>Tonnes</item>
+        <item>Quintals</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+
+</resources>

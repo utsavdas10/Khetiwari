@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
+
+    <!--    Declaring colors-->
+    <color name="top_start">#02A861</color>
+    <color name="top_end">#76DF99</color>
+    <color name="bottom_left_start">#108155</color>
+    <color name="bottom_left_end">#76DF99</color>
+    <color name="bottom_right_start">#065135</color>
+    <color name="bottom_right_end">#41D19A</color>
+    <color name="pop_up_top">#169D68</color>
+    <color name="pop_up_mid">#44DA76</color>
+    <color name="whole_page">#ECF8F4</color>
+    <color name="storage_card">#A3EBBB</color>
+
+</resources>
