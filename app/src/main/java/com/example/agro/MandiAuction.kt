@@ -32,7 +32,7 @@ class MandiAuction : AppCompatActivity() {
         val firstWord = arr?.get(0)
 
         findViewById<TextView>(R.id.name).text =firstWord
-        findViewById<TextView>(R.id.quantity).text = quantity+unit
+        findViewById<TextView>(R.id.quantity).text = "${quantity} ${unit?.lowercase()} -"
         findViewById<TextView>(R.id.item).text =product
 
         val bidderLinear: LinearLayout = findViewById(R.id.bidderLinear)

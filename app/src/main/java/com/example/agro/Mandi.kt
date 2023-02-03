@@ -33,6 +33,9 @@ class Mandi : AppCompatActivity() {
         val inflater: LayoutInflater = LayoutInflater.from(this)
 
         val user = FirebaseAuth.getInstance().currentUser
+        val name = user?.displayName
+        val arr = name?.split(" ")
+        val firstWord = arr?.get(0)
         val userId = user?.uid.toString()
         val db = Firebase.firestore.collection("Users").document(userId).collection("Selling")
 
@@ -42,8 +45,8 @@ class Mandi : AppCompatActivity() {
                     val view: View = inflater.inflate(R.layout.activity_mandi_card, mandiLinear, false)
 
                     view.findViewById<TextView>(R.id.item).text = document.id
-                    view.findViewById<TextView>(R.id.quantity).text = document.data["quantity"].toString() +" "+ document.data["unit"].toString()
-                    view.findViewById<TextView>(R.id.name).text = user?.displayName.toString()
+                    view.findViewById<TextView>(R.id.quantity).text = document.data["quantity"].toString() +" "+ document.data["unit"].toString().lowercase()+" -"
+                    view.findViewById<TextView>(R.id.name).text = firstWord
 
                     view.setOnClickListener {
                         intent1.putExtra("Product", document.id)
