@@ -53,7 +53,7 @@ class MandiAdd : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Error adding Item", Toast.LENGTH_LONG).show()
             }
 
-            val auction = MandiAuctionData(Product, quantityInt ,Unit1 ,basePriceInt)
+            val auction = MandiAuctionData(Product, quantityInt ,Unit1 ,basePriceInt, user?.displayName.toString())
 
             Product?.let {
                 Firebase.firestore.collection("Users").document(userId)
