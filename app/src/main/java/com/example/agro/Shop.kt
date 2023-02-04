@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -18,6 +19,10 @@ class Shop : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop)
+
+        findViewById<ImageView>(R.id.iBtn).setOnClickListener{
+            startActivity(Intent(this,ShopI::class.java))
+        }
 
         val user = FirebaseAuth.getInstance().currentUser
         val userName =  user?.displayName.toString()

@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +20,10 @@ class Storage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_storage)
+
+        findViewById<ImageView>(R.id.iBtn).setOnClickListener{
+            startActivity(Intent(this,StorageI::class.java))
+        }
 
         val imgbtn = findViewById<ImageButton>(R.id.imgBtn)
         imgbtn.setOnClickListener {

@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +24,10 @@ class Mandi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mandi)
+
+        findViewById<ImageView>(R.id.iBtn).setOnClickListener{
+            startActivity(Intent(this,MandiI::class.java))
+        }
 
         val intent1 = Intent(this, MandiAuction::class.java)
 
