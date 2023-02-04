@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_125sdp"
     android:layout_margin="@dimen/_5sdp"
-    android:background="@drawable/shop_card_ciew"
+    android:backgroundTint="#F3F0AC"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="@dimen/_10sdp">
 
@@ -25,33 +25,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="88dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="8dp"
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="271dp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_weight="1"
-            android:elevation="11dp"
-            android:orientation="vertical"
+            android:elevation="50dp"
+            android:fontFamily="@font/roboto"
+            android:text="Red Apple"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/fruits_logo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.175">
-
-            <TextView
-                android:id="@+id/Name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:elevation="50dp"
-                android:fontFamily="@font/roboto"
-                android:text="Red Apple"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            app:layout_constraintVertical_bias="0.301" />
 
         <LinearLayout
             android:id="@+id/linearLayout4"
@@ -75,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="196dp"
+            android:layout_marginBottom="8dp"
             android:layout_weight="1"
             android:elevation="50dp"
             android:fontFamily="@font/roboto"
@@ -85,7 +77,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/cost"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintHorizontal_bias="0.095"
             app:layout_constraintStart_toEndOf="@+id/fruits_logo"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
             app:layout_constraintVertical_bias="0.25" />
@@ -94,7 +86,6 @@
             android:id="@+id/cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="208dp"
             android:elevation="50dp"
             android:fontFamily="@font/roboto"
@@ -104,10 +95,11 @@
             android:textSize="@dimen/_10ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.258"
+            app:layout_constraintHorizontal_bias="0.307"
             app:layout_constraintStart_toEndOf="@+id/fruits_logo"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-            app:layout_constraintVertical_bias="0.411" />
+
+            app:layout_constraintTop_toBottomOf="@+id/Name"
+            app:layout_constraintVertical_bias="0.686" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

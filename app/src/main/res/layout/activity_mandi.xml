@@ -52,6 +52,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_420sdp"
+        android:paddingTop="@dimen/_5sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -71,7 +72,7 @@
         android:layout_width="84dp"
         android:layout_height="62dp"
         android:background="@drawable/button_storage"
-        android:backgroundTint="@color/top_end"
+        android:backgroundTint="#004409"
         android:clickable="true"
         android:contentDescription="add"
         app:layout_constraintBottom_toBottomOf="parent"

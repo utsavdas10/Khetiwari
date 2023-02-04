@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SELLING"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:textSize="@dimen/_25ssp"
         android:textStyle="bold"

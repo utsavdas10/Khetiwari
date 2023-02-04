@@ -9,7 +9,8 @@
     android:background="@drawable/shop_card_ciew"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="@dimen/_10sdp"
-    android:backgroundTint="#A3EBBB">
+    android:paddingBottom="@dimen/_10sdp"
+    android:backgroundTint="#F3F0AC">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"

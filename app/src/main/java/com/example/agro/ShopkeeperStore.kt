@@ -13,6 +13,7 @@ import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_shopkeeper_store_card.view.*
 import kotlinx.android.synthetic.main.activity_storage.*
 
 class ShopkeeperStore : AppCompatActivity() {
@@ -43,6 +44,7 @@ class ShopkeeperStore : AppCompatActivity() {
                     view.findViewById<TextView>(R.id.Name).text = document.data["product"].toString()
                     view.findViewById<TextView>(R.id.amount).text = document.data["quantity"].toString()+" " + document.data["unit"].toString()
                     view.findViewById<TextView>(R.id.cost).text = "Rs. "+ document.data["price"].toString()
+                    view.findViewById<TextView>(R.id.seller).text = "Seller: "+ document.data["sellerName"].toString()
 
                     shopkeeperStoreLinear.addView(view)
                 }

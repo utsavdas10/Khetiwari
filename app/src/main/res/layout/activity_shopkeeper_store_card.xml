@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_125sdp"
     android:layout_margin="@dimen/_5sdp"
-    android:background="@drawable/shop_card_ciew"
+    android:backgroundTint="#F3F0AC"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="@dimen/_10sdp">
 
@@ -24,33 +24,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="88dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="8dp"
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="189dp"
+            android:layout_height="27dp"
             android:layout_weight="1"
-            android:elevation="11dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:elevation="50dp"
+            android:fontFamily="@font/roboto"
+            android:text="Red Apple"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
             app:layout_constraintStart_toEndOf="@+id/fruits_logo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.175">
-
-            <TextView
-                android:id="@+id/Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:elevation="50dp"
-                android:fontFamily="@font/roboto"
-                android:text="Red Apple"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            app:layout_constraintVertical_bias="0.533" />
 
         <LinearLayout
             android:id="@+id/linearLayout4"
@@ -62,36 +54,36 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.035"
+            app:layout_constraintHorizontal_bias="0.037"
             app:layout_constraintStart_toEndOf="@+id/fruits_logo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.54">
+            app:layout_constraintVertical_bias="0.783">
 
             <TextView
                 android:id="@+id/amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:elevation="50dp"
                 android:fontFamily="@font/roboto"
                 android:text="10 kg"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold"
-                android:layout_marginTop="@dimen/_5sdp"/>
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_15sdp"
                 android:elevation="50dp"
                 android:fontFamily="@font/roboto"
                 android:text="Rs. 50/kg"
                 android:textAlignment="center"
                 android:textColor="@color/bottom_right_end"
-                android:textSize="@dimen/_12ssp"
-                android:layout_marginBottom="@dimen/_15sdp"/>
+                android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:id="@+id/seller"
@@ -102,7 +94,7 @@
                 android:text="Seller: XYZ"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_15ssp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

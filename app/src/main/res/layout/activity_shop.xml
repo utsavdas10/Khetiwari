@@ -5,7 +5,7 @@
     android:id="@+id/mainDrawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whole_page"
+    android:background="#004409"
     tools:context=".Shop">
 
     <LinearLayout
@@ -36,7 +36,7 @@
             android:elevation="50dp"
             android:fontFamily="@font/roboto"
             android:text="Welcome"
-            android:textColor="#494949"
+            android:textColor="#FFFFFF"
             android:textAlignment="center"
             android:textSize="@dimen/_10ssp" />
 
@@ -47,7 +47,7 @@
             android:elevation="50dp"
             android:fontFamily="@font/roboto"
             android:text="Agro Shop"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold" />
