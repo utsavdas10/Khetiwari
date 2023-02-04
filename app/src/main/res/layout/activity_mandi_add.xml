@@ -67,7 +67,7 @@
 
 
                 <Button
-                    android:id="@+id/popup_window_button"
+                    android:id="@+id/addBtn"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -95,7 +95,7 @@
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:maxLines="1"
                     android:inputType="number"
-                    app:layout_constraintBottom_toTopOf="@+id/popup_window_button"
+                    app:layout_constraintBottom_toTopOf="@+id/addBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 

@@ -5,12 +5,10 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.app.Activity
-import android.content.ContentValues.TAG
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
@@ -53,7 +51,7 @@ class PopUpWindow : AppCompatActivity() {
         darkStatusBar = bundle?.getBoolean("darkstatusbar", false) ?: false
 
         popup_window_title.text = popupTitle
-        popup_window_button.text = popupButton
+        addBtn.text = popupButton
 
         if (Build.VERSION.SDK_INT in 19..20) {
             setWindowFlag(this, true)
@@ -102,7 +100,7 @@ class PopUpWindow : AppCompatActivity() {
             }
         }
         // Close the Popup Window when you press the button
-        popup_window_button.setOnClickListener {
+        addBtn.setOnClickListener {
 
             val product = findViewById<EditText>(R.id.editTextName).text.toString()
             val quantity = findViewById<EditText>(R.id.editTextQuantity).text.toString()
