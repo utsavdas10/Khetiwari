@@ -83,7 +83,7 @@
     </ScrollView>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/info"
         android:layout_width="84dp"
         android:layout_height="62dp"
         android:background="@drawable/button_storage"

@@ -13,15 +13,13 @@ import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_shopkeeper_store_card.view.*
-import kotlinx.android.synthetic.main.activity_storage.*
 
 class ShopkeeperStore : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopkeeper_store)
 
-        val imgbtn = findViewById<ImageButton>(R.id.imageButton)
+        val imgbtn = findViewById<ImageButton>(R.id.info)
         imgbtn.setOnClickListener {
             val intent = Intent(this, ShopkeeperShopAdd::class.java)
             intent.putExtra("popuptitle", "Add Items!")
