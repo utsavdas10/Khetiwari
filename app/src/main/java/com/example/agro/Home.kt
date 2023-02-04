@@ -25,7 +25,7 @@ import java.util.jar.Attributes.Name
 import kotlin.math.roundToInt
 
 class Home : AppCompatActivity() {
-    val CITY: String = "Kolkata,IN"
+    val CITY: String = "Gandhinagar,IN"
     val API: String = "1472fe708df6d7d4cf2c5ff997a78262"
     var name: String? = ""
     private lateinit var database : DatabaseReference
@@ -151,7 +151,7 @@ class Home : AppCompatActivity() {
                 val address = jsonObj.getString("name") + ", " + sys.getString("country")
                 findViewById<TextView>(R.id.temp).text = temp
                 findViewById<TextView>(R.id.pressure).text= pressure
-                findViewById<TextView>(R.id.location).text =  "\uD83D\uDCCDKolkata, IN"
+                findViewById<TextView>(R.id.location).text =  "\uD83D\uDCCDGadhinagar, IN"
                 findViewById<TextView>(R.id.weather_type).text = weatherDescription.capitalize()
                 findViewById<TextView>(R.id.humidity).text = humidity
                 findViewById<TextView>(R.id.wind_speed).text = windSpeed
