@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class Name_Email : AppCompatActivity() {
     var phoneNumber : String? = ""
@@ -21,7 +22,15 @@ class Name_Email : AppCompatActivity() {
             intent.putExtra("phoneNumber",phoneNumber)
             intent.putExtra("NAME",name)
             intent.putExtra("EMAIL",email)
-            startActivity(intent)
+            if(email.isEmpty()){
+                Toast.makeText(this, "Enter your email", Toast.LENGTH_LONG).show()
+            }
+            else if(name.isEmpty()){
+                Toast.makeText(this, "Enter your name", Toast.LENGTH_LONG).show()
+            }
+            else{
+                startActivity(intent)
+            }
         }
     }
 }

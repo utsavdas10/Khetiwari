@@ -12,11 +12,13 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_storage.*
 
 class Mandi : AppCompatActivity() {
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,9 +35,7 @@ class Mandi : AppCompatActivity() {
         val inflater: LayoutInflater = LayoutInflater.from(this)
 
         val user = FirebaseAuth.getInstance().currentUser
-        val name = user?.displayName
-        val arr = name?.split(" ")
-        val firstWord = arr?.get(0)
+
         val userId = user?.uid.toString()
         val db = Firebase.firestore.collection("Users").document(userId).collection("Selling")
 
@@ -46,7 +46,15 @@ class Mandi : AppCompatActivity() {
 
                     view.findViewById<TextView>(R.id.item).text = document.id
                     view.findViewById<TextView>(R.id.quantity).text = document.data["quantity"].toString() +" "+ document.data["unit"].toString().lowercase()+" -"
-                    view.findViewById<TextView>(R.id.name).text = firstWord
+                    val fdatabase = FirebaseDatabase.getInstance().getReference("Users")
+                    val rCurrentUserId = FirebaseAuth.getInstance().currentUser!!.uid
+                    fdatabase.child(rCurrentUserId).get().addOnSuccessListener {
+                        val name = it.child("name").value.toString()
+                        val arr = name.split(" ")
+                        val firstWord = arr[0]
+                        view.findViewById<TextView>(R.id.name).text = firstWord
+                    }
+
 
                     view.setOnClickListener {
                         intent1.putExtra("Product", document.id)

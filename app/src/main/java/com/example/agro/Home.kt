@@ -69,20 +69,6 @@ class Home : AppCompatActivity() {
         }
 
 
-
-        val userName = user?.displayName.toString()
-        val userId :String= user?.uid.toString()
-        val users = UserData(userName, userEmail)
-
-
-
-        val db = Firebase.firestore.collection("Users").document(userId)
-        db.set(users).addOnSuccessListener {
-            Log.d(TAG, "DocumentSnapshot successfully written!")
-        }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error writing document", e)
-            }
         findViewById<Switch>(R.id.switch1).setOnCheckedChangeListener { _, isChecked ->
             if (isChecked)
                 startActivity(Intent(this,Home2::class.java ))
@@ -108,6 +94,19 @@ class Home : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("Users")
         val User = User("${userEmail}","${name}","${phoneNumber}","","","")
         database.child(currentUserId).setValue(User)
+
+        //Firestore database upload
+        val user = FirebaseAuth.getInstance().currentUser
+        val fdatabase = FirebaseDatabase.getInstance().getReference("Users")
+        val rCurrentUserId = FirebaseAuth.getInstance().currentUser!!.uid
+        fdatabase.child(rCurrentUserId).get().addOnSuccessListener {
+            val name = it.child("name").value
+            val email = it.child("email").value
+            val userId: String = user?.uid.toString()
+            val users = UserData(name.toString(), email.toString())
+            val db = Firebase.firestore.collection("Users").document(userId)
+            db.set(users)
+        }
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {

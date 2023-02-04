@@ -10,10 +10,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class MandiAuction : AppCompatActivity() {
+    var name: String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mandi_auction)
@@ -23,15 +25,19 @@ class MandiAuction : AppCompatActivity() {
         val unit = intent.getStringExtra("Unit1")
         val price = intent.getStringExtra("Price")
 
+        val fdatabase = FirebaseDatabase.getInstance().getReference("Users")
+        val rCurrentUserId = FirebaseAuth.getInstance().currentUser!!.uid
+        fdatabase.child(rCurrentUserId).get().addOnSuccessListener {
+            name = it.child("name").value.toString()
+            val arr = name?.split(" ")
+            val firstWord = arr?.get(0)
+            findViewById<TextView>(R.id.name).text =firstWord
+        }
 
 
         val user = FirebaseAuth.getInstance().currentUser
-        val name = user?.displayName
-        val userId = user?.uid.toString()
-        val arr = name?.split(" ")
-        val firstWord = arr?.get(0)
 
-        findViewById<TextView>(R.id.name).text =firstWord
+        val userId = user?.uid.toString()
         findViewById<TextView>(R.id.quantity).text = "${quantity} ${unit?.lowercase()} -"
         findViewById<TextView>(R.id.item).text =product
 
