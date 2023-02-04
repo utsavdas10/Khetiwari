@@ -25,28 +25,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="189dp"
-            android:layout_height="27dp"
-            android:layout_weight="1"
-            android:elevation="50dp"
-            android:fontFamily="@font/roboto"
-            android:text="Red Apple"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_20ssp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.031"
-            app:layout_constraintStart_toEndOf="@+id/fruits_logo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.533" />
+
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
@@ -57,42 +40,55 @@
             app:layout_constraintHorizontal_bias="0.037"
             app:layout_constraintStart_toEndOf="@+id/fruits_logo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.783">
+            >
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:elevation="50dp"
+                android:fontFamily="@font/roboto"
+                android:text="Red Apple"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/amount"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:elevation="50dp"
                 android:fontFamily="@font/roboto"
                 android:text="10 kg"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/cost"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_15sdp"
                 android:elevation="50dp"
                 android:fontFamily="@font/roboto"
                 android:text="Rs. 50/kg"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@color/bottom_right_end"
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
                 android:id="@+id/seller"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="50dp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/roboto"
                 android:text="Seller: XYZ"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp" />
         </LinearLayout>
