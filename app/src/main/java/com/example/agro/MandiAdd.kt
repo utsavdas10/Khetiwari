@@ -3,7 +3,6 @@ package com.example.agro
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -36,7 +35,7 @@ class MandiAdd : AppCompatActivity() {
                 .collection("Storage").document(it)
         }
 
-        findViewById<Button>(R.id.popup_window_button).setOnClickListener {
+        findViewById<Button>(R.id.addBtn).setOnClickListener {
 
             val quantity = findViewById<EditText>(R.id.editTextQuantity).text.toString()
             val quantityInt = Integer.parseInt(quantity)

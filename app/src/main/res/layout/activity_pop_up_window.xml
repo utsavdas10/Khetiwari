@@ -64,7 +64,7 @@
 
 
                 <Button
-                    android:id="@+id/popup_window_button"
+                    android:id="@+id/addBtn"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
@@ -99,7 +99,7 @@
                     android:ems="10"
                     android:hint="Enter the Quantity"
                     android:inputType="number"
-                    app:layout_constraintBottom_toTopOf="@+id/popup_window_button"
+                    app:layout_constraintBottom_toTopOf="@+id/addBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +109,7 @@
                     android:id="@+id/spinner"
                     android:layout_width="116dp"
                     android:layout_height="49dp"
-                    app:layout_constraintBottom_toTopOf="@+id/popup_window_button"
+                    app:layout_constraintBottom_toTopOf="@+id/addBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.363"
                     app:layout_constraintStart_toEndOf="@+id/editTextQuantity"

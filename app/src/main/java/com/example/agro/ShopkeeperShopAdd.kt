@@ -39,7 +39,7 @@ class ShopkeeperShopAdd : AppCompatActivity() {
             }
         }
 
-        findViewById<Button>(R.id.popup_window_button).setOnClickListener {
+        findViewById<Button>(R.id.addBtn).setOnClickListener {
 
             val product = findViewById<EditText>(R.id.editTextName).text.toString()
             val quantity = findViewById<EditText>(R.id.editTextQuantity).text.toString()

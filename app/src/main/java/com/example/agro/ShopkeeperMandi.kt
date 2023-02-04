@@ -56,8 +56,7 @@ class ShopkeeperMandi : AppCompatActivity() {
                                     view.findViewById<CardView>(R.id.card).setOnClickListener {
                                         val intent = Intent(this, ShopkeeperMandiBid::class.java)
                                         intent.putExtra("popuptitle", "" + document1.data["product"].toString())
-                                        intent.putExtra("basePrice", "Rs. " + document1.data["price"].toString() )
-                                        intent.putExtra("darkstatusbar", false)
+                                        intent.putExtra("basePrice", "" + document1.data["price"].toString() )
                                         startActivity(intent)
                                     }
                                 }
