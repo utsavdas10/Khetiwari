@@ -5,6 +5,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="flag">Flag</string>
     <string-array name="Units">
         <item>Kg</item>
         <item>g</item>

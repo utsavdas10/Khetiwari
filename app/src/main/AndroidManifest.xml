@@ -17,6 +17,15 @@
         android:theme="@style/Theme.Agro"
         tools:targetApi="31">
         <activity
+            android:name=".MandiI"
+            android:exported="false" />
+        <activity
+            android:name=".ShopI"
+            android:exported="false" />
+        <activity
+            android:name=".StorageI"
+            android:exported="false" />
+        <activity
             android:name=".ShopkeeperMandiBid"
             android:exported="false" />
         <activity
