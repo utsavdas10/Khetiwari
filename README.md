@@ -13,14 +13,6 @@ So essentially our project focuses on rather evolutionising the existing systems
 We are digitising the Mandi auction system set by the government in place in accordance to the MSP system.
 
 
-
-## Installation
-
-[Kheti Wari]👨‍🌾
-
-[Kheti Wari]: <uhnnn.com>
-
-(Click the above link to install)
     
 ## Features
 
