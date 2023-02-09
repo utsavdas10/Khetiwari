@@ -11,6 +11,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -33,6 +35,9 @@ class Storage : AppCompatActivity() {
             intent.putExtra("darkstatusbar", false)
             startActivity(intent)
         }
+
+        refreshApp()
+
         val linear1: LinearLayout = findViewById(R.id.storageLinear)
         val inflater: LayoutInflater = LayoutInflater.from(this)
 
@@ -55,5 +60,16 @@ class Storage : AppCompatActivity() {
                 Log.d(TAG, "Error getting documents: ", exception)
             }
 
+    }
+
+    private fun refreshApp(){
+        findViewById<SwipeRefreshLayout>(R.id.swipeToRefresh).setOnRefreshListener {
+            val mIntent = intent
+            finish()
+            overridePendingTransition(0,0)
+            startActivity(mIntent)
+            overridePendingTransition(0,0)
+            findViewById<SwipeRefreshLayout>(R.id.swipeToRefresh).isRefreshing = false
+        }
     }
 }

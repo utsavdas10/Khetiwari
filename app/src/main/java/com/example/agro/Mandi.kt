@@ -8,10 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.ktx.firestore
@@ -24,6 +22,8 @@ class Mandi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mandi)
+
+        refreshApp()
 
         findViewById<ImageView>(R.id.iBtn).setOnClickListener{
             startActivity(Intent(this,MandiI::class.java))
@@ -75,5 +75,15 @@ class Mandi : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d(ContentValues.TAG, "Error getting documents: ", exception)
             }
+    }
+    private fun refreshApp(){
+        findViewById<SwipeRefreshLayout>(R.id.swipeToRefresh).setOnRefreshListener {
+            val mIntent = intent
+            finish()
+            overridePendingTransition(0,0)
+            startActivity(mIntent)
+            overridePendingTransition(0,0)
+            findViewById<SwipeRefreshLayout>(R.id.swipeToRefresh).isRefreshing = false
+        }
     }
 }

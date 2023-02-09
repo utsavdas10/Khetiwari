@@ -87,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
 
-                        android:text="5 Ton -"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="@dimen/_21ssp"
                         android:textStyle="bold" />
@@ -98,7 +98,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:fontFamily="@font/roboto"
-                        android:text="Rice"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="@dimen/_21ssp"
                         android:textStyle="bold" />

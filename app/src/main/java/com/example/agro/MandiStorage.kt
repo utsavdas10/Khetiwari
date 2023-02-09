@@ -36,7 +36,7 @@ class MandiStorage : AppCompatActivity() {
                     val quantity = document.data["quantity"]
                     val unit = document.data["unit"]
                     view.findViewById<TextView>(R.id.Name).text = product
-                    view.findViewById<TextView>(R.id.amount).text = quantity.toString() + unit.toString()
+                    view.findViewById<TextView>(R.id.amount).text = quantity.toString() + " "+unit.toString().lowercase()
 
                     storageLinear.addView(view)
 
