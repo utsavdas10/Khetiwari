@@ -1,49 +1,40 @@
 package com.example.agro
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
-import android.widget.Switch
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.agro.data_classes.User
 import com.example.agro.data_classes.UserData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import org.json.JSONObject
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.jar.Attributes.Name
 import kotlin.math.roundToInt
 
 class Home2 : AppCompatActivity() {
     val CITY: String = "Kolkata,IN"
     val API: String = "1472fe708df6d7d4cf2c5ff997a78262"
-    var name: String? = ""
+
     private lateinit var database : DatabaseReference
-    var userEmail: String? = ""
-    var phoneNumber: String? = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home2)
 
-        val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
-        database = FirebaseDatabase.getInstance().getReference("Users")
-        database.child(currentUserId).get().addOnSuccessListener {
-
-            if (!(it.exists())){
-                uploadData()
-            }
-        }
+        var name: String? = ""
+        var userEmail: String? = ""
+        var phoneNumber: String? = ""
 
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
@@ -61,11 +52,37 @@ class Home2 : AppCompatActivity() {
             }
         }
 
+        val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
+        database = FirebaseDatabase.getInstance().getReference("Users")
         database.child(currentUserId).get().addOnSuccessListener {
-            val name = it.child("name").value.toString()
-            val arr = name.split(" ")
-            val firstWord = arr[0]
-            findViewById<TextView>(R.id.name1).text = "Hello, "+firstWord
+
+            if (!(it.exists())) {
+                val obj = Database("${userEmail}", "${name}", "${phoneNumber}", "", "", "")
+                obj.uploadData()
+                Handler(Looper.myLooper()!!).postDelayed(Runnable {
+                    database.child(currentUserId).get().addOnSuccessListener {
+                        val name = it.child("name").value.toString()
+                        val arr=name.split(" ")
+                        findViewById<TextView>(R.id.name1).text = "Hello, "+arr[0]
+                    }
+
+                }, 200)
+            }
+            else{
+                database.child(currentUserId).get().addOnSuccessListener {
+                    val name = it.child("name").value.toString()
+                    val arr = name.split(" ")
+                    findViewById<TextView>(R.id.name1).text = "Hello, " + arr[0]
+                }
+            }
+        }
+
+        val db = Firebase.firestore.collection("Users").document(currentUserId)
+        db.get().addOnSuccessListener {
+            val name = it.data?.get("name")?.toString()
+            val arr = name?.split(" ")
+            val firstWord = arr?.get(0)
+            findViewById<TextView>(R.id.name1).text = "Hello, " + firstWord
         }
 
         findViewById<Button>(R.id.topRightPetal).setOnClickListener {
@@ -78,27 +95,6 @@ class Home2 : AppCompatActivity() {
             startActivity(Intent(this, ShopkeeperMandi::class.java))
         }
         weatherTask().execute()
-    }
-
-    private fun uploadData() {
-        val currentUser = FirebaseAuth.getInstance().currentUser
-        val currentUserId = currentUser!!.uid
-        database = FirebaseDatabase.getInstance().getReference("Users")
-        val User = User("${userEmail}","${name}","${phoneNumber}","","","")
-        database.child(currentUserId).setValue(User)
-
-        //Firestore database upload
-        val user = FirebaseAuth.getInstance().currentUser
-        val fdatabase = FirebaseDatabase.getInstance().getReference("Users")
-        val rCurrentUserId = FirebaseAuth.getInstance().currentUser!!.uid
-        fdatabase.child(rCurrentUserId).get().addOnSuccessListener {
-            val name = it.child("name").value
-            val email = it.child("email").value
-            val userId: String = user?.uid.toString()
-            val users = UserData(name.toString(), email.toString())
-            val db = Firebase.firestore.collection("Users").document(userId)
-            db.set(users)
-        }
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {

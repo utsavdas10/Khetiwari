@@ -46,7 +46,7 @@ class Storage : AppCompatActivity() {
                     val view: View = inflater.inflate(R.layout.activity_storage_card, storageLinear, false)
 
                     view.findViewById<TextView>(R.id.Name).text = document.id
-                    view.findViewById<TextView>(R.id.amount).text = document.data["quantity"].toString() + document.data["unit"].toString()
+                    view.findViewById<TextView>(R.id.amount).text = document.data["quantity"].toString() +" "+ document.data["unit"].toString().lowercase()
 
                     storageLinear.addView(view)
                 }

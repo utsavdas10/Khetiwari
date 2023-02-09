@@ -1,4 +1,4 @@
-package com.example.agro
+package com.example.agro.data_classes
 
 class User {
     private var name: String=""

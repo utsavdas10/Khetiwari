@@ -21,6 +21,8 @@ class Edit_profile : AppCompatActivity() {
     var db_dob: String? = null
     var db_address: String? = null
     var db_pinCode: String? = null
+    var name: String? = ""
+    var email : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
@@ -44,8 +46,8 @@ class Edit_profile : AppCompatActivity() {
         val fdatabase = FirebaseDatabase.getInstance().getReference("Users")
         val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
         fdatabase.child(currentUserId).get().addOnSuccessListener {
-            val name = it.child("name").value
-            val email = it.child("email").value
+            name = it.child("name").value.toString()
+            email = it.child("email").value.toString()
             findViewById<TextView>(R.id.name).text = name.toString()
             findViewById<TextView>(R.id.email).text = email.toString()
         }
@@ -83,33 +85,35 @@ class Edit_profile : AppCompatActivity() {
             val address = findViewById<EditText>(R.id.address).text.toString()
             val dob = findViewById<EditText>(R.id.dob).text.toString()
             val pin = findViewById<EditText>(R.id.pin_code).text.toString()
-            updateData(mobileNum, dob, address, pin)
-        }
-
-    }
-
-    private fun updateData(mobileNum: String, dob: String, address: String, pin: String) {
-        database = FirebaseDatabase.getInstance().getReference("Users")
-
-        val user = mapOf<String, String>(
-            "mobile" to mobileNum,
-            "dob" to dob,
-            "address" to address,
-            "pin" to pin
-        )
-        val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
-        database.child(currentUserId).updateChildren(user).addOnSuccessListener {
-
-            Toast.makeText(this, "Successfuly Updated", Toast.LENGTH_SHORT).show()
+            val obj = Database("${email}", "${name}", "${mobileNum}", "${dob}", "${address}", "${pin}")
+            obj.uploadData()
             val intent = Intent(this,Account::class.java)
-
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
-
-
-        }.addOnFailureListener {
-
-            Toast.makeText(this, "Failed to Update", Toast.LENGTH_SHORT).show()
-
         }
+
     }
+
+//    private fun updateData(mobileNum: String, dob: String, address: String, pin: String) {
+//        database = FirebaseDatabase.getInstance().getReference("Users")
+//
+//        val user = mapOf<String, String>(
+//            "mobile" to mobileNum,
+//            "dob" to dob,
+//            "address" to address,
+//            "pin" to pin
+//        )
+//        val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
+//        database.child(currentUserId).updateChildren(user).addOnSuccessListener {
+//
+//            Toast.makeText(this, "Successfuly Updated", Toast.LENGTH_SHORT).show()
+//
+//
+//
+//        }.addOnFailureListener {
+//
+//            Toast.makeText(this, "Failed to Update", Toast.LENGTH_SHORT).show()
+//
+//        }
+//    }
 }
