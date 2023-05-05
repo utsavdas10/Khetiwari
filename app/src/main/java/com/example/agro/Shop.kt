@@ -44,19 +44,19 @@ class Shop : AppCompatActivity() {
                                     view.findViewById<TextView>(R.id.Name).text =
                                         document1.data["product"].toString()
 
-                                view.findViewById<TextView>(R.id.amount).text =
-                                    document1.data["quantity"].toString() + document1.data["unit"].toString()
+                                    view.findViewById<TextView>(R.id.amount).text =
+                                        document1.data["quantity"].toString() + document1.data["unit"].toString()
 
-                                view.findViewById<TextView>(R.id.cost).text =
-                                    "Rs. " + document1.data["price"].toString()
+                                    view.findViewById<TextView>(R.id.cost).text =
+                                        "Rs. " + document1.data["price"].toString()
 
-                                view.findViewById<TextView>(R.id.seller).text =
-                                    document1.data["sellerName"].toString()
+                                    view.findViewById<TextView>(R.id.seller).text =
+                                        document1.data["sellerName"].toString()
 
-                                linear1.addView(view)
+                                    linear1.addView(view)
 
-                                view.findViewById<CardView>(R.id.card).setOnClickListener {
-                                    startActivity(Intent(this, MapsActivity::class.java))
+                                    view.findViewById<CardView>(R.id.card).setOnClickListener {
+                                        startActivity(Intent(this, MapsActivity::class.java))
                                 }
                             }
                         }
